@@ -193,7 +193,7 @@ public class JUnitResultArchiver extends Recorder implements SimpleBuildStep {
                 build.addAction(action);
             }
 
-        if (action.getResult().getFailCount() > 0)
+        if (action.getResult().getFailCount() > 0 && getHealthScaleFactor() > 0 )
             build.setResult(Result.UNSTABLE);
         }
     }
